@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details Form</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      animation: backgroundMove 6s infinite alternate;
+      color: white;
+    }
+    
+    @keyframes backgroundMove {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+    
+    .container {
+      background-color: rgba(255, 255, 255, 0.15);
+      padding: 20px 30px;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      animation: fadeIn 1.2s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .title {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    .form {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input {
+      width: 100%;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+    }
+    
+    .submit {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.3s;
+    }
+    
+    .submit:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">User Details Form</h1>
+    <form id="user">
+      <div class="form">
+        <h4>Name:</h4>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form">
+        <h4>Email:</h4>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form">
+        <h4>Password:</h4>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form">
+        <h4>Phone:</h4>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <button class="submit">Submit</button>
+    </form>
+  </div>
+  <script>
+    document.getElementById("user").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+    
+      alert(`Thank you, ${name}! Your details have been submitted.`);
+    });  
+  </script>
+</body>
+</html>
